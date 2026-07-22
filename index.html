@@ -3,131 +3,499 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Tools - Free Online PDF Tools</title>
+<meta name="description" content="Merge, split, compress, and convert PDF files online for free. Fast, secure, and private PDF tools that work right in your browser — no uploads, no signup required.">
+<meta name="keywords" content="pdf tools, merge pdf, split pdf, compress pdf, pdf to word, word to pdf, image to pdf, pdf to jpg, rotate pdf, unlock pdf, protect pdf, watermark pdf, free pdf tools online">
+<meta name="author" content="PDF Tools">
+<link rel="canonical" href="https://www.pdftools-example.com/">
 
-<title>Merge PDF Online Free | PDF Tools</title>
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Tools - Free Online PDF Tools">
+<meta property="og:description" content="Merge, split, compress and convert PDF files securely in your browser. 100% free, no uploads to any server.">
+<meta property="og:url" content="https://www.pdftools-example.com/">
+<meta property="og:site_name" content="PDF Tools">
+<meta property="og:image" content="https://www.pdftools-example.com/assets/og-image.png">
 
-<meta name="description" content="Merge PDF online free. Combine PDF files instantly with our fast and secure PDF tools.">
-<meta name="keywords" content="merge pdf, merge pdf online, combine pdf, pdf merger, free pdf tools">
-<meta name="robots" content="index,follow">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Tools - Free Online PDF Tools">
+<meta name="twitter:description" content="Merge, split, compress and convert PDF files securely in your browser. 100% free, no uploads to any server.">
+<meta name="twitter:image" content="https://www.pdftools-example.com/assets/og-image.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PDF Tools",
+  "url": "https://www.pdftools-example.com/",
+  "logo": "https://www.pdftools-example.com/assets/logo.png",
+  "description": "Free online PDF tools to merge, split, compress and convert PDF files securely in your browser.",
+  "sameAs": []
+}
+</script>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+  :root{
+    --red:#e11d2e;
+    --red-dark:#b8121f;
+    --red-light:#fff1f2;
+    --ink:#1a1a1f;
+    --muted:#65646f;
+    --line:rgba(26,26,31,0.08);
+    --white:#ffffff;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(225,29,46,0.10);
+    --shadow-lg:0 20px 50px rgba(225,29,46,0.16);
+    --ff:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  }
 
-body{
-background:#f5f7fb;
-}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--ff);
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;}
+  .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px;}
+  .visually-hidden{
+    position:absolute;width:1px;height:1px;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;
+  }
+  section{scroll-margin-top:80px;}
 
-header{
-background:#2563eb;
-color:white;
-padding:18px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
-}
+  /* ===== Navbar ===== */
+  header.site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1200px;margin:0 auto;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-size:1.35rem;font-weight:800;color:var(--ink);letter-spacing:-0.02em;
+  }
+  .logo .logo-mark{
+    width:36px;height:36px;border-radius:10px;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:1rem;font-weight:900;
+    box-shadow:0 6px 16px rgba(225,29,46,0.35);
+  }
+  .logo span.accent{color:var(--red);}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{
+    font-weight:600;font-size:0.96rem;color:var(--ink);
+    position:relative;padding:6px 0;transition:color .25s ease;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;
+    background:var(--red);transition:width .25s ease;
+  }
+  .nav-links a:hover{color:var(--red);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--red);color:#fff;padding:10px 22px;border-radius:999px;
+    font-weight:700;font-size:0.92rem;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 8px 20px rgba(225,29,46,0.28);
+  }
+  .nav-cta:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 12px 26px rgba(225,29,46,0.35);}
+  .menu-toggle{
+    display:none;background:none;width:40px;height:40px;border-radius:10px;
+    align-items:center;justify-content:center;
+  }
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{
+    content:"";display:block;width:22px;height:2px;background:var(--ink);
+    position:relative;transition:all .25s ease;
+  }
+  .menu-toggle span::before{position:absolute;top:-7px;}
+  .menu-toggle span::after{position:absolute;top:7px;}
 
-.hero{
-text-align:center;
-padding:50px 20px;
-}
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed;top:68px;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--line);
+      flex-direction:column;gap:0;padding:8px 0;
+      transform:translateY(-8px);opacity:0;pointer-events:none;
+      transition:all .25s ease;
+    }
+    .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .nav-links a{width:100%;padding:14px 24px;}
+    .nav-links a::after{display:none;}
+    .nav-links .nav-cta{margin:10px 24px;text-align:center;}
+    .menu-toggle{display:flex;}
+  }
 
-.hero h1{
-font-size:34px;
-color:#222;
-margin-bottom:10px;
-}
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:96px 24px 110px;
+    background:
+      radial-gradient(600px 300px at 85% -10%, rgba(225,29,46,0.10), transparent 60%),
+      radial-gradient(500px 260px at 10% 110%, rgba(225,29,46,0.08), transparent 60%),
+      var(--white);
+    text-align:center;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--red-light);color:var(--red-dark);
+    padding:8px 16px;border-radius:999px;font-weight:700;font-size:0.82rem;
+    border:1px solid rgba(225,29,46,0.15);margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,5.5vw,3.6rem);
+    font-weight:800;letter-spacing:-0.03em;line-height:1.12;
+    max-width:800px;margin:0 auto 20px;color:var(--ink);
+  }
+  .hero h1 .accent{color:var(--red);}
+  .hero p.subtitle{
+    font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);
+    max-width:560px;margin:0 auto 38px;
+  }
+  .hero-cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;padding:16px 38px;border-radius:14px;font-weight:700;font-size:1.05rem;
+    box-shadow:0 14px 32px rgba(225,29,46,0.32);
+    transition:transform .25s ease, box-shadow .25s ease;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(225,29,46,0.4);}
+  .btn-secondary{
+    background:#fff;color:var(--ink);padding:16px 32px;border-radius:14px;
+    font-weight:700;font-size:1.05rem;border:1px solid var(--line);
+    transition:all .25s ease;
+  }
+  .btn-secondary:hover{border-color:var(--red);color:var(--red);transform:translateY(-3px);}
 
-.hero p{
-font-size:18px;
-color:#666;
-margin-bottom:30px;
-}
+  .hero-stats{
+    margin-top:64px;display:flex;justify-content:center;gap:56px;flex-wrap:wrap;
+  }
+  .hero-stats div{text-align:center;}
+  .hero-stats strong{display:block;font-size:1.7rem;font-weight:800;color:var(--red);}
+  .hero-stats span{font-size:0.85rem;color:var(--muted);font-weight:600;}
 
-.tools{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:20px;
-max-width:1000px;
-margin:auto;
-}
+  /* ===== Section heading ===== */
+  .section-head{text-align:center;max-width:640px;margin:0 auto 52px;}
+  .section-head .eyebrow{
+    color:var(--red);font-weight:800;font-size:0.82rem;letter-spacing:0.08em;
+    text-transform:uppercase;display:block;margin-bottom:12px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px;
+  }
+  .section-head p{color:var(--muted);font-size:1.02rem;}
 
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,.1);
-text-align:center;
-transition:.3s;
-}
+  /* ===== Tools grid ===== */
+  .tools{padding:100px 24px;background:var(--white);}
+  .tools-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;max-width:1200px;margin:0 auto;
+  }
+  .tool-card{
+    position:relative;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 26px;
+    box-shadow:var(--shadow);
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    overflow:hidden;
+  }
+  .tool-card::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg, rgba(225,29,46,0.06), transparent 60%);
+    opacity:0;transition:opacity .3s ease;
+  }
+  .tool-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-lg);
+    border-color:rgba(225,29,46,0.3);
+  }
+  .tool-card:hover::before{opacity:1;}
+  .tool-icon{
+    width:54px;height:54px;border-radius:14px;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;color:#fff;margin-bottom:20px;
+    box-shadow:0 10px 22px rgba(225,29,46,0.28);
+    position:relative;z-index:1;
+  }
+  .tool-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px;position:relative;z-index:1;}
+  .tool-card p{color:var(--muted);font-size:0.92rem;margin-bottom:20px;position:relative;z-index:1;}
+  .tool-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:0.9rem;color:var(--red);
+    position:relative;z-index:1;transition:gap .25s ease;
+  }
+  .tool-btn:hover{gap:12px;}
 
-.card:hover{
-transform:translateY(-5px);
-}
+  /* ===== Why choose us ===== */
+  .why{padding:100px 24px;background:linear-gradient(180deg,var(--red-light),#fff 70%);}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:22px;max-width:1200px;margin:0 auto;
+  }
+  .why-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 24px;text-align:center;
+    box-shadow:var(--shadow);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .why-icon{
+    width:56px;height:56px;border-radius:50%;
+    background:var(--red-light);color:var(--red);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;margin:0 auto 18px;
+  }
+  .why-card h3{font-size:1.05rem;font-weight:800;margin-bottom:8px;}
+  .why-card p{color:var(--muted);font-size:0.88rem;}
 
-.card h2{
-margin-bottom:10px;
-}
+  /* ===== FAQ ===== */
+  .faq{padding:100px 24px;background:var(--white);}
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:#fff;transition:border-color .25s ease;
+  }
+  .faq-item[open]{border-color:rgba(225,29,46,0.3);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:20px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    font-weight:700;font-size:1rem;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";font-size:1.4rem;font-weight:400;color:var(--red);
+    transition:transform .25s ease;flex-shrink:0;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding:0 24px 20px;color:var(--muted);font-size:0.94rem;}
 
-.card p{
-color:#666;
-margin-bottom:20px;
-}
+  /* ===== CTA banner ===== */
+  .cta-banner{
+    margin:0 24px 100px;max-width:1152px;margin-left:auto;margin-right:auto;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    border-radius:28px;padding:60px 40px;text-align:center;color:#fff;
+    box-shadow:var(--shadow-lg);
+  }
+  .cta-banner h2{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;margin-bottom:12px;}
+  .cta-banner p{opacity:0.9;margin-bottom:28px;font-size:1rem;}
+  .cta-banner .btn-secondary{background:#fff;color:var(--red-dark);border:none;}
+  .cta-banner .btn-secondary:hover{transform:translateY(-3px);color:var(--red-dark);}
 
-button{
-background:#2563eb;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-cursor:pointer;
-font-size:16px;
-}
+  /* ===== Footer ===== */
+  footer{background:#151116;color:#c9c7ce;padding:64px 24px 28px;}
+  .footer-grid{
+    max-width:1200px;margin:0 auto;display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo{color:#fff;margin-bottom:14px;}
+  .footer-brand p{font-size:0.9rem;color:#9c99a5;max-width:280px;}
+  footer h4{color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:16px;}
+  footer ul li{margin-bottom:10px;}
+  footer ul li a{font-size:0.88rem;color:#9c99a5;transition:color .25s ease;}
+  footer ul li a:hover{color:var(--red);}
+  .footer-bottom{
+    max-width:1200px;margin:0 auto;padding-top:24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:0.82rem;color:#78758080;
+  }
+  @media (max-width:760px){
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:480px){
+    .footer-grid{grid-template-columns:1fr;}
+  }
 
-button:hover{
-background:#1d4ed8;
-}
-
-footer{
-margin-top:50px;
-padding:20px;
-text-align:center;
-background:#111827;
-color:white;
-}
+  /* skip link */
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--red);color:#fff;
+    padding:12px 20px;border-radius:0 0 10px 0;z-index:200;font-weight:700;
+  }
+  .skip-link:focus{left:0;}
 </style>
-
 </head>
-
 <body>
 
-<header>
-PDF Tools
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Primary navigation">
+    <a href="#" class="logo" aria-label="PDF Tools home">
+      <span class="logo-mark" aria-hidden="true">P</span>
+      PDF <span class="accent">Tools</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#main-content">Home</a></li>
+      <li><a href="#tools">All Tools</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#tools" class="nav-cta">Merge PDF</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </nav>
 </header>
 
-<section class="hero">
-<h1>Free Online PDF Tools</h1>
-<p>Merge, Split, Compress, Rotate and Convert PDF files for free.</p>
-</section>
+<main id="main-content">
 
-<section class="tools">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <span class="hero-badge">✨ 100% Free &nbsp;•&nbsp; No Sign-up Required</span>
+    <h1 id="hero-heading">Free Online <span class="accent">PDF Tools</span></h1>
+    <p class="subtitle">Merge, Split, Compress and Convert PDF files securely in your browser.</p>
+    <div class="hero-cta-row">
+      <a href="#tools" class="btn-primary" aria-label="Start with Merge PDF tool">📎 Merge PDF</a>
+      <a href="#tools" class="btn-secondary">Explore All Tools</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>12+</strong><span>PDF Tools</span></div>
+      <div><strong>100%</strong><span>Browser-Based</span></div>
+      <div><strong>0</strong><span>Files Uploaded</span></div>
+    </div>
+  </section>
 
-<div class="card">
-<h2>Merge PDF</h2>
-<p>Combine multiple PDF files into one.</p>
-<button>Coming Soon</button>
-</div>
+  <!-- TOOLS -->
+  <section class="tools" id="tools" aria-labelledby="tools-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Toolkit</span>
+        <h2 id="tools-heading">Popular PDF Tools</h2>
+        <p>Everything you need to manage your PDF files, all in one place.</p>
+      </div>
 
-</section>
+      <div class="tools-grid">
 
-<footer>
-© 2026 PDF Tools. All Rights Reserved.
-</footer>
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">📎</div>
+          <h3>Merge PDF</h3>
+          <p>Combine multiple PDF files into a single organized document in seconds.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
 
-</body>
-</html>
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">✂️</div>
+          <h3>Split PDF</h3>
+          <p>Extract pages or split a large PDF file into multiple smaller files.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">📦</div>
+          <h3>Compress PDF</h3>
+          <p>Reduce PDF file size while keeping the best possible quality.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">📄</div>
+          <h3>PDF to Word</h3>
+          <p>Convert your PDF files into fully editable Word documents.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">📝</div>
+          <h3>Word to PDF</h3>
+          <p>Turn Word documents into polished, share-ready PDF files.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🖼️</div>
+          <h3>Image to PDF</h3>
+          <p>Convert JPG, PNG and other image formats into a single PDF.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">📷</div>
+          <h3>PDF to JPG</h3>
+          <p>Export each PDF page as a high-quality JPG image file.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🔄</div>
+          <h3>Rotate PDF</h3>
+          <p>Fix page orientation by rotating one or all pages instantly.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🔓</div>
+          <h3>Unlock PDF</h3>
+          <p>Remove password protection from your PDF files securely.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🔒</div>
+          <h3>Protect PDF</h3>
+          <p>Add a password to keep your sensitive PDF documents safe.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">💧</div>
+          <h3>Watermark PDF</h3>
+          <p>Stamp text or image watermarks across your PDF pages.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🗑️</div>
+          <h3>Delete Pages</h3>
+          <p>Remove unwanted pages from your PDF file with one click.</p>
+          <a href="#" class="tool-btn">Open Tool →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why" id="about" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why PDF Tools</span>
+        <h2 id="why-heading">Why Choose Us</h2>
+        <p>Built for speed, privacy, and simplicity — every time you use it.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">⚡</div>
+          <h3>Fast</h3>
+          <p>Get results in seconds with our optimized processing engine.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🛡️</div>
+          <h3>Secure</h3>
+          <p>Your files are handled with strict privacy and security standards.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🚫☁️</div>
+          <h3>No Upload to Server</h3>
+          <p>Files are processed locally in your browser — nothing leaves your device.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🎁</div>
+          <h3>Free</h3>
+     
